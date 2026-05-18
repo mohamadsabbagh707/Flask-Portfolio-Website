@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<h2>Contact Me</h2>
+
+<form method="POST">
+    <label>Your Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Your Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Your Message:</label><br>
+    <textarea name="message" rows="5" cols="30" required></textarea><br><br>
+
+    <button type="submit">Send</button>
+</form>
+
+{% if email_status %}
+    <p>{{ email_status }}</p>
+{% endif %}
+
+{% if sms_status %}
+    <p>{{ sms_status }}</p>
+{% endif %}
+
+{% endblock %}

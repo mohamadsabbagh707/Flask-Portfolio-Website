@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Task 7 Page{% endblock %}
+
+{% block content %}
+
+<h2>Hello, {{ name }}!</h2>
+
+<h3>Project List</h3>
+
+<ul>
+    {% for project in projects %}
+        <li>
+            {{ project.name }} -
+            {% if project.completed %}
+                Completed
+            {% else %}
+                In Progress
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
